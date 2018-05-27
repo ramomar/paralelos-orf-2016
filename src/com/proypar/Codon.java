@@ -104,7 +104,7 @@ public enum Codon {
 
     private static Boolean esNucletidoInvalido(char ch) {
         char c = Character.toLowerCase(ch);
-        return c!='a' && c!='t' && c!='g' && c!='c';
+        return c!='a' && c!='t' && c!='g' && c!='c' && c!='n';
     }
 
     private static Boolean cadenaPuedeSerCodon(String str) {

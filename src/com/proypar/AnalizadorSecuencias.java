@@ -52,18 +52,17 @@ public final class AnalizadorSecuencias {
             if (Codon.esCodonDeParada(codon) && leyendoMarco) {
                 codonParada = codon;
                 leyendoMarco = false;
-
             }
+
         }
 
-        return new ResultadoAnalisis(codonInicio, codonParada, _secuencia, secAminoacidos);
+        return new ResultadoAnalisis(codonInicio, codonParada, _secuencia, secAminoacidos, _marco);
     }
 
     public static void main(String args[]) {
         File archivo = new File(args[0]);
         List<String> secuencias = LectorFASTA.leerSecuenciasDeArchivo(archivo);
 
-        System.out.println("archivo leido");
         for (String sec : secuencias) {
             ResultadoAnalisis analisis = analizarSecuencia(sec, 1);
             for (ArrayList<AminoAcido> am : analisis.aminosEncontrados) System.out.println(am);

@@ -14,6 +14,7 @@ public abstract class LectorFASTA {
             bufferedReader = new BufferedReader(reader);
             String linea, secuencia = "";
             int numSecuencias = 0;
+
             while ((linea = bufferedReader.readLine()) != null) {
                 if (esInicioDeSecuencia(linea)) {
                     numSecuencias++;
@@ -21,6 +22,7 @@ public abstract class LectorFASTA {
                 } else {
                     secuencias.set(numSecuencias-1, secuencias.get(numSecuencias-1) + linea);
                 }
+
             }
         } catch (FileNotFoundException e) {
             System.out.println("el archivo no existe");
